@@ -1,0 +1,70 @@
+<html>
+<head>
+<title> Table World </title>
+<style type="text/css">
+td{
+text-align:center;
+width:1em;
+}
+</style>
+<script>
+  function f1()
+  {
+	 var val = document.getElementById("in").value;
+	 if(val.length == 0)
+	 {
+	    document.getElementById("in").style.border="3px solid red";
+		document.getElementById("in").style.backgroundColor="rgba(255,0,0,0.3)"
+		document.getElementById("error").style.marginLeft="68px";
+	    document.getElementById("error").innerHTML="This is a required field";
+	    document.getElementById("error").style.display="block";
+		document.getElementById("t1").style.visibility="hidden";
+	 }
+	 else if(val < 1 || val > 999){
+	    document.getElementById("in").style.border="3px solid red";
+		document.getElementById("in").style.backgroundColor="rgba(255,0,0,0.3)";
+		document.getElementById("error").style.marginLeft="10px";
+		document.getElementById("error").innerHTML="Please enter a number in given range";
+		document.getElementById("error").style.display="block";
+		document.getElementById("t1").style.visibility="hidden";
+	 }
+	 else{
+	 document.getElementById("error").style.display="none"
+	 document.getElementById("in").style.border="1px solid black";
+	 document.getElementById("in").style.backgroundColor="white"
+	 document.getElementById("t1").style.visibility="visible";
+	 var collection1 = document.getElementsByClassName("n1");
+	 for(var i = 0; i < collection1.length; i++)
+	   collection1[i].innerHTML = val;
+	 var collection2 = document.getElementsByClassName("n2");
+     for(var i = 0, j = 1; i < collection2.length && j <= 10; i++,j++)
+	   collection2[i].innerHTML = (val * j);
+     }	   
+  }
+</script>
+</head>
+<body>
+<div id="d1" style="margin-left:500px;width:400px;border:5px solid green">
+ <div id="d2" style="padding-left:35px">
+  <h1 style="padding-left:35px">Table Application</h1>
+  <label style="font-size:30px;padding-left:2px"> Enter a Number (1 to 999) : </label><br><br>
+  <input id="in" style="font-size:30px;margin-left:90px;text-align:center" type="number" value="5" min="1" max="999"> <br><br>
+  <label id="error" style="font-size:20px;color:red;display:none;margin-left:10px"> Please Enter a Number in Given Range </label> <br>
+  <button id="click1" style="font-size:30px;margin-left:50px;background-color:lightblue;color:red" onclick="f1()"> Generate Table </button>
+  <br><br>
+  <table cellspacing="0px" id="t1" style="padding-left:35px;padding-right:35px;font-size:30px;visibility:hidden" width="300px">
+    <tr> <td class="n1">5</td> <td> X</td> <td>1</td> <td>=</td> <td class="n2">20</td> </tr>
+	<tr> <td class="n1">5</td> <td> X</td> <td>2</td> <td>=</td> <td class="n2">10</td> </tr>
+	<tr> <td class="n1">5</td> <td> X</td> <td>3</td> <td>=</td> <td class="n2">10</td> </tr>
+	<tr> <td class="n1">5</td> <td> X</td> <td>4</td> <td>=</td> <td class="n2">10</td> </tr>
+	<tr> <td class="n1">5</td> <td> X</td> <td>5</td> <td>=</td> <td class="n2">10</td> </tr>
+	<tr> <td class="n1">5</td> <td> X</td> <td>6</td> <td>=</td> <td class="n2">10</td> </tr>
+	<tr> <td class="n1">5</td> <td> X</td> <td>7</td> <td>=</td> <td class="n2">10</td> </tr>
+	<tr> <td class="n1">5</td> <td> X</td> <td>8</td> <td>=</td> <td class="n2">10</td> </tr>
+	<tr> <td class="n1">5</td> <td> X</td> <td>9</td> <td>=</td> <td class="n2">10</td> </tr>
+	<tr> <td class="n1">5</td> <td> X</td> <td>10</td> <td>=</td> <td class="n2">10</td> </tr>
+  </table>
+ </div>
+</div>  
+</body>
+</html>
